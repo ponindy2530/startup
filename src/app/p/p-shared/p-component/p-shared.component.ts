@@ -17,6 +17,14 @@ export class PSharedComponent implements OnInit {
     public _cookieService: CookieService
   ) { }
 
+
+  models: any = [];
+  models1: any = [];
+  models2: any = [];
+  pd: any = [];
+  updateId: number;
+  addmodel: any = [];
+  del: any = [];
   ngOnInit() {
   }
 

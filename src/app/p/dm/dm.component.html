@@ -1,0 +1,24 @@
+<nav class="nav-extended">
+  <div class="nav-wrapper cyan">
+    <a href="javascritp:void(0)" class="brand-logo" style="margin-left: 2cm;">{{title}}</a>
+    <app-c-slide-out></app-c-slide-out>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a [routerLink]="'dmsetuser'" routerLinkActive="active" pTooltip="เข้าสู่ระบบ" tooltipPosition="top">เข้าสู่ระบบ</a></li>
+      <li><a [routerLink]="'../applogin'" routerLinkActive="active" pTooltip="ออกจากระบบ" tooltipPosition="top"><i class="large material-icons">input</i></a></li>
+    </ul>
+
+  </div>
+  <div class="nav-content cyan">
+    <ul class="tabs tabs-transparent">
+      <li class="tab"><a [routerLink]="'dashboard'" routerLinkActive="active">หน้าหลัก</a></li>
+      <li class="tab"><a [routerLink]="'main'" routerLinkActive="active">บัญชีวัสดุทันตกรรม</a></li>
+      <li class="tab"><a [routerLink]="'in'" routerLinkActive="active">บัญชีรับเข้า</a></li>
+      <li class="tab"><a [routerLink]="'out'" routerLinkActive="active">บัญชีเบิกจ่าย</a></li>
+      <li class="tab"><a [routerLink]="'dmsetuser'" routerLinkActive="active">รายงานวัสดุทันตกรรม</a></li>
+      <li class="tab"><a [routerLink]="'dmsetuser'" routerLinkActive="active">ตั้งค่าระบบ</a></li>
+    </ul>
+  </div>
+</nav>
+<br />
+<router-outlet></router-outlet>

@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 
-
 import {
     DataTableModule,
     SharedModule,
@@ -78,7 +77,7 @@ import * as highcharts from 'highcharts';
         MdToolbarModule,
         MdAutocompleteModule,
         MdChipsModule,
-        FieldsetModule,
+        FieldsetModule
 
 
     ]

@@ -1,0 +1,86 @@
+<div class="collection-header">
+  <h5> <i class="material-icons">mode_edit</i> <b>แบบฟอร์มรับเข้า </b></h5>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="row">
+        <div class="container">
+          <br />
+          <form (ngSubmit)="save();">
+            <p-fieldset legend="ข้อมูลวัสดุ">
+              <div class="row ipb2" >
+                <div class="col s2">
+                  <label class="pbz"> รหัส</label>
+                  <input class="pbz" [(ngModel)]="model.mid" name="mid" id="mid" type="text" disabled>
+                </div>
+                <div class="col s5">
+                  <label class="pbz"> รหัสวัสดุ</label>
+                  <input class="pbz" [(ngModel)]="model.mcode" name="mcode" id="mcode" type="text" disabled>
+                </div>
+                <div class="col s5">
+                  <label class="pbz"> ชื่อวัสดุ</label>
+                  <input class="pbz" [(ngModel)]="model.mname" name="mname" id="mname" type="text" disabled>
+                </div>
+              </div>
+            </p-fieldset>
+            <br />
+            <p-fieldset legend="ข้อมูลล่าสุด">
+              <div class="row">
+                <div class="col s4">
+                  <label class="pbz"> วันที่รับเข้า ***</label>
+                  <input class="pbz" [(ngModel)]="model.datestockin" name="datestockin" id="datestockin" type="date">
+                </div>
+                <div class="col s4">
+                  <label class="pbz"> เลขใบเสร็จรับเข้า ***</label>
+                  <input class="pbz ipb" [(ngModel)]="model.numberid" name="numberid" id="numberid" type="text">
+                </div>
+                <div class="col s4">
+                  <label class="pbz"> บริษัท ***</label>
+                  <select class="pbz ipb" class="browser-default pbz1" [(ngModel)]="model.supid" name="supid" id="supid">
+                                <option [value]="0">ตัวเลือก</option>
+                                <option *ngFor="let item of models" [value]="item.supid">{{item.supid}} - {{item.supname}}</option>
+                            </select>
+                </div>
+              </div>
+            </p-fieldset>
+            <br />
+            <p-fieldset legend="รายละเอียด">
+              <div class="row">
+                <div class="col s4">
+                  <label class="pbz"> จำนวนรับเข้า *** {{"("+munit+")"}}</label>
+                  <input class="pbz ipb" [(ngModel)]="model.numstockin" id="numstockin" name="numstockin" type="number" (change)="doCalPricelot()">
+                </div>
+                <div class="col s4">
+                  <label class="pbz"> ราคาต่อหน่วย ***</label>
+                  <input class="pbz ipb" [(ngModel)]="model.pricen" name="pricen" id="pricen" type="number" step="0.01"  type="number" (change)="doCalPricelot()">
+                </div>
+                <div class="col s4">
+                  <label class="pbz"> มูลคารับเข้า ***</label>
+                  <input class="pbz ipb" [(ngModel)]="model.pricelot" name="pricelot" id="pricelot" type="number"  step="0.01" (change)="doCalPricen()">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <label class="pbz"> เดือนปีหมดอายุ(เช่น 201806)</label>
+                  <input class="pbz ipb" [(ngModel)]="model.expire" name="expire" type="number" id="expire" placeholder="YYYYMM" maxlength="6"
+                    (keyup)="getExp($event)">
+                </div>
+                <div class="col s6">
+                  <label class="pbz"> หมายเหตุ</label>
+                  <input class="pbz ipb" [(ngModel)]="model.notelot" id="notelot" name="notelot" placeholder="หมายเหตุ" type="text">
+                </div>
+                <div class="col s12 m12 l12">
+                  <div class="col s12 center">
+                    <button class="waves-effect waves-light btn"><i class="material-icons left">add</i> บันทึก</button>
+                  </div>
+                </div>
+              </div>
+            </p-fieldset>
+          </form>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

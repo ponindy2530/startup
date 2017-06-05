@@ -1,0 +1,8 @@
+<app-item-search (getSearchText)="getSearchText($event)"></app-item-search>
+
+<app-item-searchlist *ngIf="searchlist" [apiKey]="apiKey" [toSearchText]="toSearchText" (ToinformData)="ToinformData($event)"></app-item-searchlist>
+
+
+<app-in-form *ngIf="inform" [getDataForm]="getDataForm" (listF)="listF($event)"></app-in-form>
+
+<app-in-list *ngIf="inlist" [apiKeyList]="apiKeyList" (ToinformData)="ToinformData($event)"></app-in-list>

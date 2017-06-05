@@ -91,4 +91,13 @@ export class PSharedService {
     })
   }
 
+  //วันที่ปัจจุบัน
+  dateNows() {
+    const currentTime = new Date();
+    const monthnow = ("0" + (currentTime.getMonth() + 1)).slice(-2);
+    const dnow = ("0" + (currentTime.getDate())).slice(-2);
+    const datenows = currentTime.getFullYear() + '-' + monthnow + '-' + dnow;
+    return datenows;
+  }
+
 }
