@@ -1,1 +1,44 @@
+<nav class="nav-extended">
+    <div class="nav-wrapper cyan darken-1">
+        <a href="javascritp:void(0)" class="brand-logo" style="margin-left: 2cm;">{{title}}</a>
+        <!--<app-c-slide-out></app-c-slide-out>-->
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <!--<img src="images/office.jpg">-->
+                    </div>
+                    <!--<a href="#!user"><img class="circle" src="images/yuna.jpg"></a>-->
+                    <a href="#!name"><span class="white-text name">John Doe</span></a>
+                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a [routerLink]="'dmsetuser'" routerLinkActive="active" pTooltip="เข้าสู่ระบบ" tooltipPosition="top">เข้าสู่ระบบ</a></li>
+            <li><a [routerLink]="'../../applogin'" routerLinkActive="active" pTooltip="ออกจากระบบ" tooltipPosition="top"><i class="large material-icons">input</i></a></li>
+        </ul>
+
+    </div>
+    <div class="nav-content cyan darken-1">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a [routerLink]="'dmdashboard/viewdashboard'" routerLinkActive="active">หน้าหลัก</a></li>
+            <li class="tab"><a [routerLink]="'dmmain/viewmain'" routerLinkActive="active">บัญชีวัสดุทันตกรรม</a></li>
+            <li class="tab"><a [routerLink]="'dmin/viewin'" routerLinkActive="active">บัญชีรับเข้า</a></li>
+            <li class="tab"><a [routerLink]="'dmout/viewout'" routerLinkActive="active">บัญชีเบิกจ่าย</a></li>
+            <!--<li class="tab"><a [routerLink]="'dmsetuser'" routerLinkActive="active">รายงานวัสดุทันตกรรม</a></li>
+            <li class="tab"><a [routerLink]="'dmsetuser'" routerLinkActive="active">ตั้งค่าระบบ</a></li>-->
+        </ul>
+    </div>
+</nav>
+<br />
+
 <router-outlet></router-outlet>

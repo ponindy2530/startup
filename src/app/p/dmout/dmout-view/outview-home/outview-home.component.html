@@ -1,0 +1,25 @@
+<!--<app-outitem-form></app-outitem-form>-->
+
+
+
+<app-outitem-listnew></app-outitem-listnew>
+
+<div class="row">
+  <div class="col s8 m8 l8">
+    <app-outitem-form [getDataForm]="getDataForm"></app-outitem-form>
+    <!--<app-out-form [getDataForm]="getDataForm" (resList)="resList($event)"></app-out-form>-->
+  </div>
+  <div class="col s4 m4 l4">
+    <app-outitem-list (ToinformData)="ToinformData($event)"></app-outitem-list>
+    <!--<app-item-search (getSearchText)="getSearchText($event)"></app-item-search>
+    <app-out-listall *ngIf="listall" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-out-listall>
+    <app-out-listall *ngIf="listall1" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-out-listall>
+    <app-out-searchout *ngIf="searchlist" [apiKey]="apiKey" [toSearchText]="toSearchText" (ToinformData)="ToinformData($event)"></app-out-searchout>-->
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <!--<app-out-list *ngIf="list" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)"></app-out-list>
+    <app-out-list *ngIf="list1" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)"></app-out-list>-->
+  </div>
+</div>

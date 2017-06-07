@@ -6,10 +6,10 @@ export class PSharedService {
   opts: RequestOptions;
 
   Token: string = '12345678';
-  conDb: string = 'db_dentstock';
+  conDb: string = 'db_dentmat';
 
-  url: string = "http://127.0.0.1/";
-  urlFd: string = "p/pon-api/";
+  url: string = "http://dmfzero.com/";
+  urlFd: string = "p/pon-api-serve/";
   urlph: string = "api-dmfzero.php";
 
   _api: string = `${this.url}${this.urlFd}${this.urlph}`;
