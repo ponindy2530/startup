@@ -13,6 +13,8 @@ import { MainitemListinComponent } from './mainitem-listin/mainitem-listin.compo
 import { MainitemListoutComponent } from './mainitem-listout/mainitem-listout.component';
 import { MainitemListexpComponent } from './mainitem-listexp/mainitem-listexp.component';
 import { MainitemListstockComponent } from './mainitem-liststock/mainitem-liststock.component';
+import { MainitemCatComponent } from './mainitem-cat/mainitem-cat.component';
+import { MainitemSupComponent } from './mainitem-sup/mainitem-sup.component';
 
 @NgModule({
     imports: [
@@ -28,14 +30,18 @@ import { MainitemListstockComponent } from './mainitem-liststock/mainitem-listst
         MainitemListinComponent,
         MainitemListoutComponent,
         MainitemListexpComponent,
-        MainitemListstockComponent
+        MainitemListstockComponent,
+        MainitemCatComponent,
+        MainitemSupComponent
     ],
     exports: [
         MainitemListmainComponent,
         MainitemListinComponent,
         MainitemListoutComponent,
         MainitemListexpComponent,
-        MainitemListstockComponent
+        MainitemListstockComponent,
+        MainitemCatComponent,
+        MainitemSupComponent
     ]
 })
 export class MainitemModule { } 
