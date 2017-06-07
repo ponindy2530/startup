@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper  cyan">
+    <form>
+      <div class="input-field">
+        <input id="search" type="search" placeholder="ค้นหาชื่อวัสดุ" required #gb>
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+
+    </form>
+
+  </div>
+</nav>
+<p-dataTable [value]="models" sortField="catname" rowGroupMode="subheader" groupField="catname" [rows]="18" [paginator]="true"
+  [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]" [globalFilter]="gb" #dt selectionMode="single" (onRowSelect)="onRowSelect($event)">
+  <ng-template pTemplate="rowgroupheader" let-rowData><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> {{rowData['catname']}}</ng-template>
+  <p-column field="mname" header="ชื่อวัสดุ" [sortable]="true"></p-column>
+  <p-column field="numnow" header="คงเหลือ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}"></p-column>
+</p-dataTable>

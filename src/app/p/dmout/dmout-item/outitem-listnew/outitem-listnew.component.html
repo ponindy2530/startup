@@ -1,3 +1,44 @@
-<p>
-  outitem-listnew works!
-</p>
+<!--<div class="collection-header">
+  <h5> <i class="material-icons">mode_edit</i> <b>แบบฟอร์มเบิกจ่าย </b></h5>
+</div>-->
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="row">
+        <div class="container">
+          <br />
+          <div class="collection-header">
+            <h5> <i class="material-icons">view_list</i> <b>แสดงรายการเบิกจ่าย :: {{dateNow}}</b></h5>
+          </div>
+          <p-dataTable [value]="models" sortField="datestockout" rowGroupMode="subheader" groupField="datestockout">
+            <ng-template pTemplate="rowgroupheader" let-rowData><i class="fa fa-calendar" aria-hidden="true"></i> วันที่เบิกจ่าย: {{rowData['datestockout']}}</ng-template>
+            <!--<p-column header="ลำดับ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}">
+              <ng-template let-col let-rowData="rowData" let-rowIndex="rowIndex" pTemplate="body">
+                {{rowIndex+1}}
+              </ng-template>
+            </p-column>-->
+            <p-column field="numberid" header="เลขที่ใบเสร็จ" [sortable]="true" [style]="{'width':'120px','text-align':'center'}"></p-column>
+            <!--<p-column field="datestockout" header="วันที่เบิกจ่าย" [sortable]="true" [style]="{'width':'100px','text-align':'center'}"></p-column>-->
+            <p-column field="mcode" header="รหัสวัสดุ" [sortable]="true"></p-column>
+            <p-column field="mname" header="ชื่อวัสดุ" [sortable]="true"></p-column>
+            <p-column field="munit" header="หน่วย" [sortable]="true" [style]="{'width':'80px','text-align':'center'}"></p-column>
+            <p-column field="numstockout" header="เบิก" [sortable]="true" [style]="{'width':'80px','text-align':'center'}"></p-column>
+            <p-column field="priceout" header="มูลค่า" [sortable]="true" [style]="{'width':'80px','text-align':'center'}"></p-column>
+            <p-column field="rcname" header="ผู้เบิก" [sortable]="true" [style]="{'width':'100px','text-align':'center'}"></p-column>
+            <p-column styleClass="col-button" header="แก้ไข" [style]="{'width':'60px','text-align':'center'}">
+              <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+                <a class="btn-floating btn-small teal" href="javascript:void(0)" pTooltip="แก้ไขข้อมูล" tooltipPosition="top" (click)="edit(item)"> <i class="material-icons">mode_edit</i></a>
+              </ng-template>
+            </p-column>
+            <p-column styleClass="col-button" header="ลบ" [style]="{'width':'60px','text-align':'center'}">
+              <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+                <a class="btn-floating btn-small red" href="javascript:void(0)" pTooltip="ลบข้อมูล" tooltipPosition="top" (click)="delete(item)"> <i class="material-icons">delete</i></a>
+              </ng-template>
+            </p-column>
+          </p-dataTable>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

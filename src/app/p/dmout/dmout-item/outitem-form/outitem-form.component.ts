@@ -18,7 +18,7 @@ export class OutitemFormComponent extends PSharedComponent implements OnInit {
   ngOnChanges() {
     if (this.getDataForm.soid >= 1) {
       this.getData1(11, this.getDataForm.mid)
-      this.numnow = this.getDataForm.numstockout;
+      this.numnow = this.getDataForm.numold;
       this.pricen = this.getDataForm.pricen;
       this.model = this.getDataForm;
     } else {
@@ -110,6 +110,7 @@ export class OutitemFormComponent extends PSharedComponent implements OnInit {
     // console.log(this.model);
     // console.log(this.updateId);
     this.model.usernames = '1';
+    this.model.hcode = '10702';
     this.pd = this.model;
     this._pSharedService.addData('mainstockout', 'soid', this.updateId, this.pd)
       .subscribe(resproducts => this.addmodel = resproducts,

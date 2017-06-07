@@ -1,3 +1,27 @@
-<p>
-  inview-home works!
-</p>
+<div class="row">
+  <div class="col s8 m8 l8">
+    <app-initem-form [getDataForm]="getDataForm" (resList)="resList($event)"></app-initem-form>
+    <!--<app-outitem-form [getDataForm]="getDataForm" (resList)="resList($event)"></app-outitem-form>-->
+    <!--<app-out-form [getDataForm]="getDataForm" (resList)="resList($event)"></app-out-form>-->
+  </div>
+  <div class="col s4 m4 l4">
+    <app-initem-list *ngIf="listall" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-initem-list>
+    <app-initem-list *ngIf="listall1" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-initem-list>
+    <!--<app-outitem-list *ngIf="listall" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-outitem-list>
+    <app-outitem-list *ngIf="listall1" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-outitem-list>-->
+    <!--<app-item-search (getSearchText)="getSearchText($event)"></app-item-search>
+    <app-out-listall *ngIf="listall" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-out-listall>
+    <app-out-listall *ngIf="listall1" [apiKeyListall]="apiKeyListall" (ToinformData)="ToinformData($event)"></app-out-listall>
+    <app-out-searchout *ngIf="searchlist" [apiKey]="apiKey" [toSearchText]="toSearchText" (ToinformData)="ToinformData($event)"></app-out-searchout>-->
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <app-initem-listnew *ngIf="list" [apiKeyList]="apiKeyList" (ToinformData)="ToinformData($event)" (resList)="resList2($event)"></app-initem-listnew>
+    <app-initem-listnew *ngIf="list1" [apiKeyList]="apiKeyList" (ToinformData)="ToinformData($event)" (resList)="resList2($event)"></app-initem-listnew>
+    <!--<app-outitem-listnew *ngIf="list" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)" (resList)="resList2($event)"></app-outitem-listnew>
+    <app-outitem-listnew *ngIf="list1" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)" (resList)="resList2($event)"></app-outitem-listnew>-->
+    <!--<app-out-list *ngIf="list" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)"></app-out-list>
+    <app-out-list *ngIf="list1" [apiKetListNew]="apiKetListNew" (ToinformData)="ToinformData($event)"></app-out-list>-->
+  </div>
+</div>

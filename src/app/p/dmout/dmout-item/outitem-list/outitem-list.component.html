@@ -13,7 +13,7 @@
 </nav>
 <p-dataTable [value]="models" sortField="catname" rowGroupMode="subheader" groupField="catname" [rows]="13" [paginator]="true"
   [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]" [globalFilter]="gb" #dt selectionMode="single" (onRowSelect)="onRowSelect($event)">
-  <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['catname']}}</ng-template>
-  <p-column field="mname" header="ชื่อวัสดุ"></p-column>
-  <p-column field="numnow" header="คงเหลือ" [style]="{'width':'60px','text-align':'center'}"></p-column>
+  <ng-template pTemplate="rowgroupheader" let-rowData><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> {{rowData['catname']}}</ng-template>
+  <p-column field="mname" header="ชื่อวัสดุ" [sortable]="true"></p-column>
+  <p-column field="numnow" header="คงเหลือ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}"></p-column>
 </p-dataTable>

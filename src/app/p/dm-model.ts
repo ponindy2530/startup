@@ -3,7 +3,7 @@ export class Mainstockin {
     hcode: string;
     mid: number;
     datestockin: string;
-    supid: number;
+    supid: number = 0;
     numstockin: number;
     pricen: number;
     pricelot: number;
@@ -36,6 +36,7 @@ export class Mainstockout {
     mcode: string;
     mname: string;
     numnow: number;
+    numold: string;
 }
 
 export class MainproductDt {
