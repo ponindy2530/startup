@@ -1,3 +1,5 @@
+import { InitemModule } from './../dmin/dmin-item/initem.module';
+import { OutitemModule } from './../dmout/dmout-item/outitem.module';
 import { MainitemModule } from './dmmain-item/mainitem.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -14,7 +16,9 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
-        MainitemModule
+        MainitemModule,
+        OutitemModule,
+        InitemModule
     ],
     declarations: [
 

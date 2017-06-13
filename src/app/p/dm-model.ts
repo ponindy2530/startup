@@ -41,7 +41,7 @@ export class Mainstockout {
 
 export class MainproductDt {
     mid: number;
-    catid: number;
+    catid: number = 0;
     mcode: string;
     mname: string;
     munit: string;

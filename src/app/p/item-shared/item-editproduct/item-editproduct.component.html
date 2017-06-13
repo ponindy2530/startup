@@ -1,0 +1,40 @@
+<hr>
+<p-dataTable [value]="models" [rows]="10" [paginator]="true" [editable]="true">
+  <p-header><span class="secondary-text-color">รายการวัสดุทันตกรรม</span>
+  </p-header>
+  <p-footer>Choose from the list.</p-footer>
+  <p-column styleClass="col-button" header="เพิ่ม" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      <a class="btn-floating btn-small blue" href="#modal1" pTooltip="เพิ่ม" tooltipPosition="top" (click)="add(item)"> <i class="material-icons">add</i></a>
+    </ng-template>
+  </p-column>
+  <p-column header="ลำดับ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-col let-rowData="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      {{rowIndex+1}}
+    </ng-template>
+  </p-column>
+  <p-column field="mcode" header="รหัสวัสดุ">
+    <ng-template let-col let-car="rowData" pTemplate="body">
+      <span>{{car[col.field]}}</span>
+    </ng-template>
+  </p-column>
+  <p-column field="mname" header="ชื่อวัสดุ">
+    <ng-template let-col let-car="rowData" pTemplate="body">
+      <span>{{car[col.field]}}</span>
+    </ng-template>
+  </p-column>
+  <p-column field="munit" header="หน่วยนับ" [editable]="true" [style]="{'width':'80px','text-align':'center'}"></p-column>
+  <p-column field="nummin" header="Min" [editable]="true" [style]="{'width':'80px','text-align':'center'}"></p-column>
+
+  <p-column styleClass="col-button" header="แก้ไข" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      <a class="btn-floating btn-small teal" href="#modal1" pTooltip="แก้ไข" tooltipPosition="top" (click)="edit(item)"> <i class="material-icons">mode_edit</i></a>
+    </ng-template>
+  </p-column>
+
+  <p-column styleClass="col-button" header="ลบข้อมูล" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      <a class="btn-floating btn-small red" href="javascript:void(0)" pTooltip="ลบข้อมูล" tooltipPosition="top" (click)="delete(item,rowIndex)"> <i class="material-icons">delete</i></a>
+    </ng-template>
+  </p-column>
+</p-dataTable>

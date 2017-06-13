@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'dmin', loadChildren: './p/dmin/dmin.module#DminModule' },
   { path: 'dmout', loadChildren: './p/dmout/dmout.module#DmoutModule' },
   { path: 'dmmain', loadChildren: './p/dmmain/dmmain.module#DmmainModule' },
+  { path: 'dmproduct', loadChildren: './p/product/product.module#ProductModule' },
+  { path: 'dmsetting', loadChildren: './p/setting/setting.module#SettingModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

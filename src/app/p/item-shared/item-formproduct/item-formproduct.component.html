@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="card">
+      <div class="row">
+        <div class="container">
+          <br />
+          <div class="collection-header">
+            <h5> <i class="material-icons">mode_edit</i> <b>{{htit}} </b></h5>
+          </div>
+          <form (ngSubmit)="save();">
+            <fieldset class="ipb2">
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  <label class="pbz"> รหัสวัสดุทันตกรรม</label>
+                  <input class="pbz" [(ngModel)]="model.mcode" name="mcode" id="mcode" type="text">
+                </div>
+                <div class="col s12 m6 l6">
+                  <label class="pbz"> ชื่อวัสดุทันตกรรม</label>
+                  <input class="pbz" [(ngModel)]="model.mname" name="mname" id="mname" type="text">
+                </div>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <label class="pbz">หน่วยนับ</label>
+                <input class="pbz" placeholder="" type="text" [(ngModel)]="model.munit" name="munit" id="munit">
+              </div>
+              <div class="col s12 m6 l6">
+                <label class="pbz">หมวดหมู่</label>
+                <select class="browser-default pbz" [(ngModel)]="model.catid" name="catid" id="catid">
+                      <option [value]="0" disabled selected>เลือกหมวดหมู่</option>
+                      <option *ngFor="let item of models1;let i=index" [value]="item.catid">{{i+1}} - {{item.catname}}</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <label class="pbz">Min</label>
+                <input class="pbz" placeholder="" [(ngModel)]="model.nummin" id="nummin" name="nummin" type="number">
+              </div>
+              <div class="col s12 m6 l6">
+                <label class="pbz">Tag</label>
+                <input class="pbz" placeholder="" type="text" [(ngModel)]="model.tag" id="tag" name="tag">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <div class="col s12 center">
+                  <button class="waves-effect waves-light btn"><i class="material-icons left">add</i> บันทึก</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

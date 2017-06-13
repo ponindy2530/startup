@@ -100,4 +100,23 @@ export class PSharedService {
     return datenows;
   }
 
+  //วันที่ปัจจุบันไทย
+  dateYearTh() {
+    const currentTime = new Date();
+    const datenows = currentTime.getFullYear() + 543;
+    return datenows;
+  }
+  datenowsEn: any;
+  dateYearEn() {
+    const currentTime = new Date();
+    const monthnow = ("0" + (currentTime.getMonth() + 1)).slice(-2);
+    if (monthnow == '10' || monthnow == '11' || monthnow == '12') {
+      this.datenowsEn = currentTime.getFullYear();
+    } else {
+      this.datenowsEn = currentTime.getFullYear() - 1;
+    }
+    // const datenows = currentTime.getFullYear();
+    return this.datenowsEn;
+  }
+
 }

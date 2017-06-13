@@ -44,25 +44,28 @@ export class ChartitemMonthComponent extends PSharedComponent implements OnInit,
         // console.log(categories);
         // console.log(_dataA);
         // console.log(_dataB);
-        this.openCharts(categories, _dataA, _dataB,MonthapiId);
+        let series = [_dataA, _dataB]
+        // this.openCharts(categories, _dataA, _dataB,MonthapiId);
 
+        this.openCharts(categories, series, MonthapiId);
 
       });
   }
 
 
   options: object;
-  openCharts(categories, _dataA, _dataB,MonthapiId) {
+  // openCharts(categories, _dataA, _dataB,MonthapiId) {
+  openCharts(categories, series, MonthapiId) {
     this.options = {
       credits: {
         enabled: false
       },
       chart: {
-        type: 'column'
+        type: 'column'  //#1
       },
       title: {
         // text: 'มูลค่ารับเข้า - เบิกจ่าย ปีงบประมาณ, 2559 ถึงปี, 2560'
-        text: `มูลค่ารับเข้า - เบิกจ่าย ปีงบประมาณ, ${MonthapiId+543} ถึงปี, ${MonthapiId+543+1}`
+        text: `มูลค่ารับเข้า - เบิกจ่าย ปีงบประมาณ, ${MonthapiId + 543} ถึงปี, ${MonthapiId + 543 + 1}`
       },
       xAxis: {
         categories: categories,
@@ -88,7 +91,9 @@ export class ChartitemMonthComponent extends PSharedComponent implements OnInit,
           borderWidth: 0
         }
       },
-      series: [_dataA, _dataB]
+      // series: [_dataA, _dataB]
+      series: series
+
     }
 
     // this.loading = false;

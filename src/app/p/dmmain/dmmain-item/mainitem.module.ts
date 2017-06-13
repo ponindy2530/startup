@@ -8,6 +8,10 @@ import {
     SharedModule,
     TooltipModule,
 } from 'primeng/primeng';
+
+import {
+    MdGridListModule
+} from '@angular/material';
 import { MainitemListmainComponent } from './mainitem-listmain/mainitem-listmain.component';
 import { MainitemListinComponent } from './mainitem-listin/mainitem-listin.component';
 import { MainitemListoutComponent } from './mainitem-listout/mainitem-listout.component';
@@ -15,6 +19,8 @@ import { MainitemListexpComponent } from './mainitem-listexp/mainitem-listexp.co
 import { MainitemListstockComponent } from './mainitem-liststock/mainitem-liststock.component';
 import { MainitemCatComponent } from './mainitem-cat/mainitem-cat.component';
 import { MainitemSupComponent } from './mainitem-sup/mainitem-sup.component';
+import { MainSearchComponent } from './main-search/main-search.component';
+import { CMainListComponent } from './c-main-list/c-main-list.component';
 
 @NgModule({
     imports: [
@@ -23,7 +29,8 @@ import { MainitemSupComponent } from './mainitem-sup/mainitem-sup.component';
         ChartModule,
         DataTableModule,
         SharedModule,
-        TooltipModule
+        TooltipModule,
+        MdGridListModule
     ],
     declarations: [
         MainitemListmainComponent,
@@ -32,7 +39,9 @@ import { MainitemSupComponent } from './mainitem-sup/mainitem-sup.component';
         MainitemListexpComponent,
         MainitemListstockComponent,
         MainitemCatComponent,
-        MainitemSupComponent
+        MainitemSupComponent,
+        MainSearchComponent,
+        CMainListComponent
     ],
     exports: [
         MainitemListmainComponent,
@@ -41,7 +50,9 @@ import { MainitemSupComponent } from './mainitem-sup/mainitem-sup.component';
         MainitemListexpComponent,
         MainitemListstockComponent,
         MainitemCatComponent,
-        MainitemSupComponent
+        MainitemSupComponent,
+        MainSearchComponent,
+        CMainListComponent
     ]
 })
 export class MainitemModule { } 

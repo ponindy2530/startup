@@ -1,3 +1,69 @@
-<p>
-  mainitem-listout works!
-</p>
+<!--<div class="collection-header">
+  <h5> <i class="material-icons">view_list</i> <b>แสดงรายการรับเข้า</b></h5>
+</div>-->
+<div>
+  <h5 class="center-align">
+    <!--<i class="material-icons">view_list</i> -->
+    <b>แสดงรายการเบิกจ่าย ปีงบประมาณ {{dYTh}} ถึง {{dYTh+1}}</b>
+  </h5>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <nav>
+      <div class="nav-wrapper  cyan">
+        <div class="input-field">
+          <input id="search" type="search" placeholder="ค้นหา" required #gbout>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!--<div class="col s6 m6 l6">
+    <nav>
+      <div class="nav-wrapper cyan">
+        <a class="brand-logo"> ปีงบประมาณ</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="javascript:void(0)" (click)="gety(1,2)">{{dYTh-2}}</a></li>
+          <li><a href="javascript:void(0)" (click)="gety(1,1)">{{dYTh-1}}</a></li>
+          <li><a href="javascript:void(0)" (click)="gety(0,0)">{{dYTh}}</a></li>
+          <li><a href="javascript:void(0)" (click)="gety(2,1)">{{dYTh+1}}</a></li>
+          <li><a href="javascript:void(0)" (click)="gety(2,2)">{{dYTh+2}}</a></li>
+          <li><a href="javascript:void(0)" (click)="gety(2,2)">{{dYTh+3}}</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>-->
+</div>
+<!--sortOrder="-1" sortField="datestockin" rowGroupMode="rowspan" [style]="{'margin-top':'50px'}"-->
+<!--sortOrder="-1" sortField="datestockin" rowGroupMode="subheader" groupField="datestockin"-->
+<p-dataTable [value]="models" [globalFilter]="gbout" #dtout selectionMode="single" [rows]="10" [paginator]="true" [pageLinks]="5"
+  [rowsPerPageOptions]="[10,20,40,60,80,100]" reorderableColumns="true">
+  <p-column header="ลำดับ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-col let-rowData="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      {{rowIndex+1}}
+    </ng-template>
+  </p-column>
+  <!--<ng-template pTemplate="rowgroupheader" let-rowData><i class="fa fa-calendar" aria-hidden="true"></i> วันที่รับเข้า: {{rowData['datestockin']}}</ng-template>-->
+  <p-column field="datestockout" header="วันที่เบิกจ่าย" [sortable]="true" [style]="{'width':'120px','text-align':'center'}"></p-column>
+  <!--<p-column field="numberid" header="เลขที่ใบเสร็จ" [sortable]="true" [style]="{'width':'120px','text-align':'center'}"></p-column>-->
+  <!--<p-column field="mcode" header="รหัสวัสดุ" [sortable]="true"></p-column>-->
+  <p-column field="mname" header="ชื่อวัสดุ" [sortable]="true"></p-column>
+  <!--<p-column field="catname" header="หมวดหมู่" [sortable]="true"></p-column>-->
+  <!--<p-column field="munit" header="หน่วยนับ" [sortable]="true"></p-column>-->
+  <!--<p-column field="pricen" header="ราคา/หน่วย" [sortable]="true"></p-column>-->
+  <!--<p-column field="priceout" header="มูลค่า" [sortable]="true"></p-column>-->
+  <p-column field="rcname" header="ผู้เบิก" [sortable]="true" [style]="{'width':'180px','text-align':'center'}"></p-column>
+  <p-column field="numstockout" header="เบิกจ่าย" [sortable]="true" [style]="{'width':'60px','text-align':'center'}"></p-column>
+  <p-column field="munit" header="หน่วยนับ" [sortable]="true" [style]="{'width':'60px','text-align':'center'}"></p-column>
+  <p-column styleClass="col-button" header="แก้ไข" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      <a class="btn-floating btn-small teal" href="#modal1" pTooltip="แก้ไข" tooltipPosition="top" (click)="edit(item)"> <i class="material-icons">mode_edit</i></a>
+    </ng-template>
+  </p-column>
+  <p-column styleClass="col-button" header="ลบข้อมูล" [style]="{'width':'60px','text-align':'center'}">
+    <ng-template let-item="rowData" let-rowIndex="rowIndex" pTemplate="body">
+      <a class="btn-floating btn-small red" href="javascript:void(0)" pTooltip="ลบข้อมูล" tooltipPosition="top" (click)="delete(item,rowIndex)"> <i class="material-icons">delete</i></a>
+    </ng-template>
+  </p-column>
+</p-dataTable>

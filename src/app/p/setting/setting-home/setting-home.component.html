@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card">
+        <div class="card-image">
+          <nav class="cyan lighten-1">
+            <div class="nav-wrapper">
+              <div class="divider"></div>
+              <ul class="left">
+                <li><a><i class="material-icons left">view_module</i> บัญชีวัสดุทันตกรรม</a></li>
+              </ul>
+            </div>
+          </nav>
+          <a href="#modal1" class="btn-floating btn-large halfway-fab waves-effect waves-light  cyan darken-3" pTooltip="เพิ่มข้อมูล"
+            tooltipPosition="top" (click)="showform()"><i class="material-icons">add</i></a>
+        </div>
+        <!--วัสดุทันตกรรม-->
+        <app-item-cat *ngIf="Aic" [apiKey]="34" (getcatTo)="getcatTo($event)"></app-item-cat>
+        <app-smart-search *ngIf="Ass" [CatID]="CatID" (getDataTo)="getDataTo($event)"></app-smart-search>
+        <app-item-editproduct *ngIf="Aie" [getDataGo]="getDataGo" (todataform)="todataform($event)"  (todataform2)="todataform2($event)"></app-item-editproduct>
+        <!--จบ-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-footer">
+    <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">ปิดหน้าต่าง</a>
+  </div>
+  <div class="modal-content">
+    <app-item-formproduct *ngIf="Atf" [getDataForm]="getDataForm" [idupdate]="idupdate"></app-item-formproduct>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">ปิดหน้าต่าง</a>
+  </div>
+</div>

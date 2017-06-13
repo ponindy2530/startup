@@ -1,0 +1,116 @@
+<!--<div class="row">
+  <div class="col s12 m12 l12">
+    <md-chip-list>
+      <md-chip color="primary" *ngFor="let a1 of y0" selected="true">{{a1}}</md-chip>
+    </md-chip-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <md-chip-list>
+      <md-chip color="primary" *ngFor="let a2 of y1" selected="true">{{a2}}</md-chip>
+    </md-chip-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <md-chip-list>
+      <md-chip color="primary" *ngFor="let a3 of y2" selected="true">{{a3}}</md-chip>
+    </md-chip-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12 xl12">
+    <md-chip-list>
+      <md-chip color="primary" *ngFor="let a4 of y3" selected="true">{{a4}}</md-chip>
+    </md-chip-list>
+  </div>
+</div>-->
+
+<input type="text" name="txtSearch" [(ngModel)]="txtSearch">
+<div class="row">
+  <div class="col">
+    <a class="waves-effect  waves-light btn btn1" style="margin-bottom:5px;" *ngFor="let a0 of y0" [class.activeButton]="a0 == selectedChip"
+      (click)="doSetMaster(a0)">
+ {{a0}}
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="chip activechip" *ngFor="let a1 of y1" [class.activeChild]="setColor(a1,1)" (click)="doSetFilter(a1)">
+      {{a1}}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="chip activechip" *ngFor="let a2 of y2" [class.activeChild]="setColor(a2,2)" (click)="doSetFilter(a2)">
+      {{a2}}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <span class=" chip activechip"  *ngFor="let a3 of y3" (click)="doSetFilter(a3)"
+      [class.activeLeaf]="setColor(a3,3)">
+    {{a3}}
+    </span>
+  </div>
+</div>
+
+<!--<div class="row">
+  <div class="col">
+    <div class="chip activechip" *ngFor="let a3 of y3" [class.activeChild]="setColor(a3,3)" (click)="doSetFilter(a3)">
+      {{a3}}
+    </div>
+  </div>
+</div>-->
+
+
+<!--<p-dataTable *ngIf="isShowData" [value]="models" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt>
+  <p-header><span class="secondary-text-color">รายการวัสดุทันตกรรม</span>
+    </p-header>
+  <p-footer>Choose from the list.</p-footer>
+  <p-column  header="ลำดับ">
+
+    <ng-template  let-rowIndex="rowIndex" let-col let-car="rowData" pTemplate="body">
+      <span>{{rowIndex+1}}</span>
+    </ng-template>
+  </p-column>
+<p-column field="mcode" header="รหัสวัสดุ">
+    <ng-template let-col let-car="rowData" pTemplate="body">
+      <span>{{car[col.field]}}</span>
+    </ng-template>
+  </p-column>
+  <p-column field="mname" header="ชื่อวัสดุ">
+    <ng-template let-col let-car="rowData" pTemplate="body">
+      <span>{{car[col.field]}}</span>
+    </ng-template>
+  </p-column>
+  <p-column field="munit" header="หน่วยนับ"></p-column>
+
+
+  <p-column styleClass="col-button">
+    <ng-template pTemplate="header">
+     
+    </ng-template>
+    <ng-template let-myhos="rowData" pTemplate="body">
+      <a class="btn-floating btn-small blue" >
+      <i class="large material-icons">mode_edit</i>
+    </a>
+
+    </ng-template>
+  </p-column>
+
+  <p-column styleClass="col-button" [style]="{'width':'60px'}">
+    <ng-template pTemplate="header">
+      ลบ
+    </ng-template>
+    <ng-template let-r="rowData" pTemplate="body">
+      <a class="btn-floating btn-small red" > <i class="material-icons">delete_forever</i></a>
+
+    </ng-template>
+  </p-column>
+</p-dataTable>-->
